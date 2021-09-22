@@ -1,0 +1,33 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(S) {
+    let str = S.split('');
+    // write your code in JavaScript (Node.js 8.9.4)
+  let i = 0, j = str.length - 1; 
+    while (i <= j) { 
+        if (str[i] == '?' && str[j] == '?') {
+            str[i] = 'a';
+            str[j] = 'a';
+        }
+         else if (str[j] == '?')
+            str[j] = str[i];
+ 
+       else if (str[i] == '?')
+            str[i] = str[j];
+ 
+        else if (str[i] != str[j])
+            return "NO";
+ 
+        i++;
+        j--;
+    }
+ 
+    return str.join("");
+
+
+}
+
+
+
+
